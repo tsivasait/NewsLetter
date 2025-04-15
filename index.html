@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make a Difference - Donation Platform</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>GiveHope</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#causes">Causes</a></li>
+                <li><a href="#donate" class="donate-btn">Donate Now</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Make a Difference Today</h1>
+            <p>Your donation can change lives and create a better future for those in need.</p>
+            <a href="#donate" class="cta-button">Donate Now</a>
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2>About Our Mission</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>GiveHope is dedicated to creating positive change in communities around the world. Since 2010, we've been working tirelessly to support those in need through various humanitarian projects.</p>
+                    <p>Our team of dedicated volunteers and staff work directly with communities to ensure that your donations make the maximum impact where they're needed most.</p>
+                </div>
+                <div class="stats">
+                    <div class="stat-item">
+                        <h3>$2.5M+</h3>
+                        <p>Donations Raised</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>50+</h3>
+                        <p>Projects Completed</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>100K+</h3>
+                        <p>Lives Impacted</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="causes" class="causes-section">
+        <div class="container">
+            <h2>Our Causes</h2>
+            <div class="causes-grid">
+                <div class="cause-card">
+                    <img src="https://via.placeholder.com/300x200" alt="Education">
+                    <h3>Education</h3>
+                    <p>Supporting schools and educational programs in underserved communities.</p>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 75%"></div>
+                    </div>
+                    <p class="progress-text">$75,000 raised of $100,000 goal</p>
+                    <a href="#donate" class="donate-link">Donate to this cause</a>
+                </div>
+                <div class="cause-card">
+                    <img src="https://via.placeholder.com/300x200" alt="Healthcare">
+                    <h3>Healthcare</h3>
+                    <p>Providing medical supplies and healthcare services to remote areas.</p>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 60%"></div>
+                    </div>
+                    <p class="progress-text">$120,000 raised of $200,000 goal</p>
+                    <a href="#donate" class="donate-link">Donate to this cause</a>
+                </div>
+                <div class="cause-card">
+                    <img src="https://via.placeholder.com/300x200" alt="Clean Water">
+                    <h3>Clean Water</h3>
+                    <p>Building wells and water purification systems in water-scarce regions.</p>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 40%"></div>
+                    </div>
+                    <p class="progress-text">$40,000 raised of $100,000 goal</p>
+                    <a href="#donate" class="donate-link">Donate to this cause</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="donate" class="donate-section">
+        <div class="container">
+            <h2>Make a Donation</h2>
+            <div class="donation-container">
+                <form id="donation-form">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cause">Select Cause</label>
+                        <select id="cause" name="cause">
+                            <option value="education">Education</option>
+                            <option value="healthcare">Healthcare</option>
+                            <option value="water">Clean Water</option>
+                            <option value="general">General Fund</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Donation Amount</label>
+                        <div class="amount-options">
+                            <button type="button" class="amount-btn" data-amount="25">$25</button>
+                            <button type="button" class="amount-btn" data-amount="50">$50</button>
+                            <button type="button" class="amount-btn" data-amount="100">$100</button>
+                            <button type="button" class="amount-btn" data-amount="250">$250</button>
+                            <button type="button" class="amount-btn custom" data-amount="custom">Custom</button>
+                        </div>
+                        <div class="custom-amount-container" style="display: none;">
+                            <input type="number" id="custom-amount" name="custom-amount" placeholder="Enter amount">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Payment Method</label>
+                        <div class="payment-methods">
+                            <div class="payment-option">
+                                <input type="radio" id="credit-card" name="payment-method" value="credit-card" checked>
+                                <label for="credit-card">Credit Card</label>
+                            </div>
+                            <div class="payment-option">
+                                <input type="radio" id="paypal" name="payment-method" value="paypal">
+                                <label for="paypal">PayPal</label>
+                            </div>
+                            <div class="payment-option">
+                                <input type="radio" id="upi" name="payment-method" value="upi">
+                                <label for="upi">UPI</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group credit-card-details">
+                        <label for="card-number">Card Number</label>
+                        <input type="text" id="card-number" name="card-number" placeholder="1234 5678 9012 3456">
+                        
+                        <div class="card-row">
+                            <div class="card-col">
+                                <label for="expiry">Expiry Date</label>
+                                <input type="text" id="expiry" name="expiry" placeholder="MM/YY">
+                            </div>
+                            <div class="card-col">
+                                <label for="cvv">CVV</label>
+                                <input type="text" id="cvv" name="cvv" placeholder="123">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group upi-details" style="display: none;">
+                        <label for="upi-id">UPI ID</label>
+                        <input type="text" id="upi-id" name="upi-id" placeholder="yourname@upi">
+                        <p class="payment-info">Enter your UPI ID to complete the donation via UPI payment.</p>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="submit-btn">Complete Donation</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <h2>What Our Donors Say</h2>
+            <div class="testimonial-slider">
+                <div class="testimonial">
+                    <p>"Donating to GiveHope was one of the most rewarding experiences. I know my contribution is making a real difference."</p>
+                    <div class="testimonial-author">
+                        <img src="https://via.placeholder.com/50" alt="Donor">
+                        <h4>Sarah Johnson</h4>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <p>"The transparency of this organization is what keeps me coming back. I can see exactly where my donations go."</p>
+                    <div class="testimonial-author">
+                        <img src="https://via.placeholder.com/50" alt="Donor">
+                        <h4>Michael Chen</h4>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <p>"I've been supporting the education initiative for two years, and the progress reports are incredible. Real change is happening!"</p>
+                    <div class="testimonial-author">
+                        <img src="https://via.placeholder.com/50" alt="Donor">
+                        <h4>Emily Rodriguez</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>GiveHope</h2>
+                    <p>Making the world a better place, one donation at a time.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#causes">Causes</a></li>
+                        <li><a href="#donate">Donate</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Charity Lane, Giving City</p>
+                    <p><i class="fas fa-phone"></i> (555) 123-4567</p>
+                    <p><i class="fas fa-envelope"></i> info@givehope.org</p>
+                </div>
+                <div class="footer-social">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 GiveHope. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
