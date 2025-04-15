@@ -21,85 +21,32 @@ document.addEventListener('DOMContentLoaded', function() {
             } else {
                 customAmountContainer.style.display = 'none';
             }
-        });
-    });
-
-    // Payment method toggle
-    const paymentMethodRadios = document.querySelectorAll('input[name="payment-method"]');
-    const creditCardDetails = document.querySelector('.credit-card-details');
-    const upiDetails = document.querySelector('.upi-details');
-
-    paymentMethodRadios.forEach(radio => {
-        radio.addEventListener('change', function() {
-            // Hide all payment detail sections first
-            creditCardDetails.style.display = 'none';
-            upiDetails.style.display = 'none';
             
-            // Show the appropriate section based on selection
-            if (this.value === 'credit-card') {
-                creditCardDetails.style.display = 'block';
-            } else if (this.value === 'upi') {
-                upiDetails.style.display = 'block';
+            // If you want to pass the amount to PayPal, you could modify the PayPal link here
+            // For example:
+            const paypalButton = document.querySelector('.paypal-button');
+            if (paypalButton && amount !== 'custom') {
+                const baseUrl = 'https://paypal.me/Thiruvalluru/';
+                paypalButton.href = baseUrl + amount;
+            } else if (paypalButton) {
+                paypalButton.href = 'https://paypal.me/Thiruvalluru';
             }
         });
     });
 
-    // Form submission
-    const donationForm = document.getElementById('donation-form');
-    
-    donationForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Get form values
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const cause = document.getElementById('cause').value;
-        const paymentMethod = document.querySelector('input[name="payment-method"]:checked').value;
-        
-        // Get donation amount
-        let donationAmount;
-        if (selectedAmount === 'custom') {
-            donationAmount = document.getElementById('custom-amount').value;
-        } else {
-            donationAmount = selectedAmount;
-        }
-        
-        // Simple validation
-        if (!name || !email || !donationAmount) {
-            alert('Please fill in all required fields');
-            return;
-        }
-        
-        // Additional validation for payment methods
-        if (paymentMethod === 'credit-card') {
-            const cardNumber = document.getElementById('card-number').value;
-            const expiry = document.getElementById('expiry').value;
-            const cvv = document.getElementById('cvv').value;
-            
-            if (!cardNumber || !expiry || !cvv) {
-                alert('Please fill in all credit card details');
-                return;
+    // Custom amount input handling
+    const customAmountInput = document.getElementById('custom-amount');
+    if (customAmountInput) {
+        customAmountInput.addEventListener('input', function() {
+            const paypalButton = document.querySelector('.paypal-button');
+            if (paypalButton && this.value) {
+                const baseUrl = 'https://paypal.me/Thiruvalluru/';
+                paypalButton.href = baseUrl + this.value;
+            } else if (paypalButton) {
+                paypalButton.href = 'https://paypal.me/Thiruvalluru';
             }
-        } else if (paymentMethod === 'upi') {
-            const upiId = document.getElementById('upi-id').value;
-            
-            if (!upiId) {
-                alert('Please enter your UPI ID');
-                return;
-            }
-        }
-        
-        // In a real application, you would send this data to a server
-        // For this example, we'll just show a success message
-        alert(`Thank you, ${name}! Your donation of $${donationAmount} to ${cause} has been processed successfully via ${paymentMethod}.`);
-        
-        // Reset form
-        donationForm.reset();
-        amountButtons.forEach(btn => btn.classList.remove('active'));
-        customAmountContainer.style.display = 'none';
-        creditCardDetails.style.display = 'block';
-        upiDetails.style.display = 'none';
-    });
+        });
+    }
 
     // Simple testimonial slider functionality
     const testimonialSlider = document.querySelector('.testimonial-slider');
